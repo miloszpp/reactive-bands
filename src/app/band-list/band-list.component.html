@@ -1,0 +1,19 @@
+<h2>Bands</h2>
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Formation year</th>
+                <th>Is active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let band of bandList">
+                <td>{{ band.name }}</td>
+                <td>{{ band.formationYear }}</td>
+                <td>{{ band.isActive }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
