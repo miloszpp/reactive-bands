@@ -34,12 +34,12 @@ export class BandDataService {
   constructor() { }
 
   getBands(active?: boolean) {
-    console.log('Fetching data started');
     return of([ 
       ...this.bands
         .map(band => ({ ...band }))
         .filter(band => active === undefined ? true : band.isActive === active)
     ]).pipe(
+      tap(() => console.log('Fetching data started')),
       delay(1000),
       // map(() => { throw "aaaa"; }), // uncomment for errors
       tap(() => console.log('Fetching data finished')),
