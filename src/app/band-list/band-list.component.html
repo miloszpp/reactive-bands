@@ -1,22 +1,33 @@
 <h2>Bands</h2>
-<div class="row" *ngIf="bandList$ | async as bandList else loading">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Formation year</th>
-                <th>Is active</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let band of bandList">
-                <td>{{ band.name }}</td>
-                <td>{{ band.formationYear }}</td>
-                <td>{{ band.isActive }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row" *ngIf="model$ | async as model">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <button 
+                class="btn btn-primary" 
+                type="button" 
+                [disabled]="model.isLoading"
+                (click)="refreshDataClickSubject.next()">Refresh data</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Formation year</th>
+                    <th>Is active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="model.isLoading">
+                    <td colspan="3" style="text-align: center">
+                        <img src="assets/loader.gif" />
+                    </td>
+                </tr>
+                <tr *ngFor="let band of model.bands">
+                    <td>{{ band.name }}</td>
+                    <td>{{ band.formationYear }}</td>
+                    <td>{{ band.isActive }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-<ng-template #loading>
-    <p>Loading...</p>
-</ng-template>
