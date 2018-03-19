@@ -1,5 +1,10 @@
 <div class="container">
     <h1>Reactive bands</h1>
     <p class="lead">Demo app for reactive programming in Angular.</p>
-    <app-band-list></app-band-list>
+    <ul>
+        <li routerLink="/bands" [queryParams]="{ active: true }">Active</li>
+        <li routerLink="/bands" [queryParams]="{ active: false }">Inactive</li>
+        <li routerLink="/bands">All</li>
+    </ul>
+    <router-outlet></router-outlet>
 </div>
