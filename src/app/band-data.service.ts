@@ -46,6 +46,20 @@ export class BandDataService {
     );
   }
 
+  searchBands(queryString: string) {
+    return of(
+      this.bands.filter(b => 
+        queryString && queryString.length > 0 
+          ? b.name.toLowerCase().includes(queryString.toLowerCase())
+          : false
+      )
+    ).pipe(
+      tap(() => console.log('Fetching data started')),
+      delay(1000),
+      tap(() => console.log('Fetching data finished')),
+    );
+  }
+
   updateIsActive(id: string, isActive: boolean) {
     console.log(`Setting isActive to ${isActive} for band with id ${id}`);
     const band = this.bands.find(band => band.id === id);
