@@ -7,16 +7,19 @@ import { AppComponent } from './app.component';
 import { BandDataService } from './band-data.service';
 import { BandListComponent } from './band-list/band-list.component';
 import { UserDataService } from './user-data.service';
+import { BandSearchComponent } from './band-search/band-search.component';
 
 const routes: Routes = [
   { path: 'bands', component: BandListComponent },
+  { path: 'band-search', component: BandSearchComponent },
   { path: '', redirectTo: 'bands', pathMatch: 'full' },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    BandListComponent
+    BandListComponent,
+    BandSearchComponent
   ],
   imports: [
     BrowserModule,

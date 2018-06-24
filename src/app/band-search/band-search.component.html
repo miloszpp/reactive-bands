@@ -1,0 +1,12 @@
+<div class="form-group row">
+    <input class="form-control" 
+            type="text"
+            placeholder="Start typing..."
+            #bandSearch 
+            (input)="search$.next(bandSearch.value)" />
+</div>
+<div class="row">
+    <ul>
+        <li *ngFor="let result of searchResults$ | async">{{ result.name }}</li>
+    </ul>
+</div>
