@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
-
 import { AppComponent } from './app.component';
 import { BandDataService } from './band-data.service';
 import { BandListComponent } from './band-list/band-list.component';
-import { UserDataService } from './user-data.service';
 import { BandSearchComponent } from './band-search/band-search.component';
+import { UserDataService } from './user-data.service';
+
 
 const routes: Routes = [
   { path: 'bands', component: BandListComponent },
@@ -28,7 +28,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [
     BandDataService,
