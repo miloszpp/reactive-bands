@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,6 +32,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [
     BandDataService,
