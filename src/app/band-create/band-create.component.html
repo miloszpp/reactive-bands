@@ -15,6 +15,6 @@
     <label for="biography">Biography</label>
     <textarea class="form-control" id="biography" rows="3" formControlName="biography"></textarea>
   </div>
-  <button type="button" class="btn">Undo</button>
+  <button type="button" class="btn" (click)="undoClick$.next()">Undo</button>
   <button type="submit" class="btn btn-primary">Add</button>
 </form>
