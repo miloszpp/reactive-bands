@@ -9,11 +9,12 @@ import { BandDataService } from './band-data.service';
 import { BandListComponent } from './band-list/band-list.component';
 import { BandSearchComponent } from './band-search/band-search.component';
 import { UserDataService } from './user-data.service';
-
+import { BandCreateComponent } from './band-create/band-create.component';
 
 const routes: Routes = [
   { path: 'bands', component: BandListComponent },
   { path: 'band-search', component: BandSearchComponent },
+  { path: 'create', component: BandCreateComponent },
   { path: '', redirectTo: 'bands', pathMatch: 'full' },
 ];
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     BandListComponent,
-    BandSearchComponent
+    BandSearchComponent,
+    BandCreateComponent
   ],
   imports: [
     BrowserModule,
